@@ -2,6 +2,8 @@ import React,{useState} from "react";
 import { Dimensions, StyleSheet, Text, View, Alert, TextInput,TouchableOpacity } from "react-native";
 
 const windowWidth = Dimensions.get('window').width;
+const usuario = 'usuario';
+const senha = '1234';
 
 export default function LoginScreen({ navigation }) {
   const [usuario, setUsuario] = useState('');

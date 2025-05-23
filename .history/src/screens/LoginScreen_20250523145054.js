@@ -2,6 +2,8 @@ import React,{useState} from "react";
 import { Dimensions, StyleSheet, Text, View, Alert, TextInput,TouchableOpacity } from "react-native";
 
 const windowWidth = Dimensions.get('window').width;
+const usuario = 'usuario';
+const senha = '1234';
 
 export default function LoginScreen({ navigation }) {
   const [usuario, setUsuario] = useState('');
@@ -11,13 +13,14 @@ export default function LoginScreen({ navigation }) {
 
     
      if (usuario != usuario || senha != senha) {
-      Alert.alert('Erro', 'Usuário ou senha incorretos.'); 
-      setUsuario('');
-      setSenha(''); 
-    } else{
-      Alert.alert('Login feito com sucesso!');
+      Alert.alert('Erro', 'Usuário ou senha incorretos.');
+     
+    } else if( usuario == usuario && senha==senha) {
+      Alert.alert('Sucesso', 'Login realizado com sucesso!');
       navigation.navigate('Home');
-    } 
+    } else{
+        Alert.alert('Erro');
+    }
   };
 
   return (
