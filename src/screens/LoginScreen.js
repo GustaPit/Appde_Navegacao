@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import{useState} from "react";
 import { Dimensions, StyleSheet, Text, View, Alert, TextInput,TouchableOpacity } from "react-native";
 
 const windowWidth = Dimensions.get('window').width;
@@ -7,10 +7,12 @@ export default function LoginScreen({ navigation }) {
   const [usuario, setUsuario] = useState('');
   const [senha, setSenha] = useState('');
 
+  const usuarioValido = 'usuario';
+  const senhaValida = 'senha';
+
   const verificarCampos = () => {
 
-    
-     if (usuario != usuario || senha != senha) {
+     if (usuario !== usuarioValido || senha != senhaValida) {
       Alert.alert('Erro', 'Usuário ou senha incorretos.'); 
       setUsuario('');
       setSenha(''); 
@@ -22,7 +24,7 @@ export default function LoginScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.titulo}>LOGIN</Text>
+      <Text style={styles.title}>LOGIN</Text>
       <TextInput
         style={styles.input}
         placeholder='email:'
@@ -37,18 +39,20 @@ export default function LoginScreen({ navigation }) {
         onChangeText={setSenha}
       />
       <TouchableOpacity style={{ 
-        backgroundColor: 'blue',
+        backgroundColor: '#201F33',
          padding: 10,
-         paddingHorizontal: 70,
+         paddingHorizontal: 90,
           borderRadius: 5,
            margin: 10,
-           marginBottom: 30,
+           marginBottom: 20,
             
                   }} onPress={verificarCampos}>
 
         <Text style={{ 
-            color: 'white',
+               fontFamily: 'times' ,
+               color: 'white',
               textAlign:'center',
+              fontSize: 17,
                }}>Entrar</Text>
       </TouchableOpacity>
     </View>
@@ -73,8 +77,8 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     backgroundColor: '#e0f7fa',
   },
-  titulo: {
-    fontSize: 22,
+  title: {
+    fontSize: 25,
     marginBottom: 16,
   },
 

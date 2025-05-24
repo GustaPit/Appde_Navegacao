@@ -10,7 +10,7 @@ export default function HomeScreen({navigation}) {
             <View style={styles.buttonContainer}>
                 <Button
                 title="Go to Details"
-                onPress={() => navigation.navigate('Details')}
+                onPress={() => navigation.navigate('Details')} 
                 />
            </View>
            <View style={styles.buttonContainer}>
@@ -28,7 +28,7 @@ export default function HomeScreen({navigation}) {
         flex:1,
         justifyContent: 'center',
         alignItems:  'center',
-        backgroundColor: '#f0f8ff', // Cor de fundo da tela
+        backgroundColor: '#B7D1DF', // Cor de fundo da tela
     },
     title:{
         fontSize: 24,
